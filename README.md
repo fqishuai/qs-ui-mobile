@@ -3,37 +3,15 @@
 [![NPM version](https://img.shields.io/npm/v/qs-ui-mobile.svg?style=flat)](https://npmjs.org/package/qs-ui-mobile)
 [![NPM downloads](http://img.shields.io/npm/dm/qs-ui-mobile.svg?style=flat)](https://npmjs.org/package/qs-ui-mobile)
 
-A react library developed with dumi
+借鉴[ant-design-mobile](https://github.com/ant-design/ant-design-mobile)开发移动端组件库
 
-## Usage
+使用[dumi](https://d.umijs.org/)生成组件库文档
 
-TODO
+## 已开发组件
 
-## Options
 
-TODO
+## 待开发组件
 
-## Development
-
-```bash
-# install dependencies
-$ pnpm install
-
-# develop library by docs demo
-$ pnpm start
-
-# build library source code
-$ pnpm run build
-
-# build library source code in watch mode
-$ pnpm run build:watch
-
-# build docs
-$ pnpm run docs:build
-
-# check your project for potential problems
-$ pnpm run doctor
-```
 
 ## LICENSE
 
