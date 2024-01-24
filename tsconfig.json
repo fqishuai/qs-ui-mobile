@@ -1,7 +1,9 @@
 {
   "compilerOptions": {
+    "outDir": "./lib",
+    "moduleResolution": "node",
     "strict": true,
-    "declaration": true,
+    "declaration": false,
     "skipLibCheck": true,
     "esModuleInterop": true,
     "jsx": "react",

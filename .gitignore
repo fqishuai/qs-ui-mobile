@@ -1,6 +1,19 @@
-node_modules
-/dist
+/node_modules/
+.DS_Store
+
+# dumi temp
 .dumi/tmp
 .dumi/tmp-test
 .dumi/tmp-production
-.DS_Store
+
+# build
+/dist/
+/lib/
+/es/
+/cjs/
+/umd/
+
+# report
+/report/
+/report.json
+/report.html
