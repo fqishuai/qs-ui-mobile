@@ -1,7 +1,7 @@
 ---
 hero:
-  title: library
-  description: A react library developed with dumi
+  title: QS UI Mobile
+  description: A react UI library for building mobile web apps
   actions:
     - text: Hello
       link: /
@@ -18,5 +18,3 @@ features:
     emoji: 🚀
     description: Put ! description here
 ---
-
-qs-ui-mobile
