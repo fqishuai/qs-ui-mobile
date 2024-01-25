@@ -1,7 +1,7 @@
 import { defineConfig } from 'dumi';
 
 export default defineConfig({
-  outputPath: 'docs-dist',
+  outputPath: 'dist',
   themeConfig: {
     logo: false,
     name: 'qs-ui-mobile',
