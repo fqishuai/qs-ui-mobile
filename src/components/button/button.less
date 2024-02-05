@@ -1,0 +1,51 @@
+@class-prefix-button: ~'qsf-button';
+
+.@{class-prefix-button} {
+  --text-color: var(--qsf-button-text-color, var(--qsf-color-text));
+  --background-color: var(--qsf-button-background-color, var(--qsf-color-white));
+  --border-radius: var(--qsf-button-border-radius, 4px);
+  --border-width: var(--qsf-button-border-width, 1px);
+  --border-style: var(--qsf-button-border-style, solid);
+  --border-color: var(--qsf-button-border-color, var(--qsf-color-border));
+
+  position: relative;
+  display: inline-block;
+  box-sizing: border-box;
+  height: auto;
+  line-height: 1.4;
+  text-align: center;
+  padding: 7px 12px;
+  margin: 0;
+  cursor: pointer;
+  transition: opacity ease 0.15s;
+  user-select: none;
+  color: var(--text-color);
+  background-color: var(--background-color);
+  border: var(--border-width) var(--border-style) var(--border-color);
+  border-radius: var(--border-radius);
+  &:focus {
+    outline: none;
+  }
+
+  &:not(&-default) {
+    --text-color: var(--qsf-color-white);
+    --background-color: var(--color);
+    --border-color: var(--color);
+  }
+
+  &-primary {
+    --color: var(--qsf-color-primary);
+  }
+
+  &-success {
+    --color: var(--qsf-color-success);
+  }
+
+  &-warning {
+    --color: var(--qsf-color-warning);
+  }
+
+  &-danger {
+    --color: var(--qsf-color-danger);
+  }
+}
