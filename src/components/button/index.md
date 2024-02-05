@@ -1,9 +1,26 @@
-# Button
+# Button 按钮
 
-This is an example component.
+用于开始一个即时操作。
 
-```jsx
-import { Foo } from 'qs-ui-mobile';
+## 何时使用
 
-export default () => <Foo title="Hello dumi!" />
-```
+标记了一个或封装一组操作命令，响应用户点击行为，触发相应的业务逻辑。
+
+## 示例
+
+<code src="./demos/demo1.tsx"></code>
+
+<!-- <code src="./demos/demo2.tsx"></code> -->
+
+## Button
+
+### 属性
+
+### CSS 变量
+|   |   |   |   |   |
+|---|---|---|---|---|
+|   |   |   |   |   |
+|   |   |   |   |   |
+|   |   |   |   |   |
+
+### Ref
