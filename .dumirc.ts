@@ -6,7 +6,7 @@ export default defineConfig({
     logo: false,
     name: 'qs-ui-mobile',
     nav: [
-      { title: '指南', link: '/guide' },
+      { title: '指南', link: '/guide/theming' },
       { title: '组件', link: '/components/button' },
     ],
     footer: false,
