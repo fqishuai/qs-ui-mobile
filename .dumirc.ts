@@ -3,8 +3,8 @@ import { defineConfig } from 'dumi';
 export default defineConfig({
   outputPath: 'dist',
   themeConfig: {
-    logo: false,
-    name: 'qs-ui-mobile',
+    logo: '/logo.png',
+    name: 'QS UI Mobile',
     nav: [
       { title: '指南', link: '/guide/theming' },
       { title: '组件', link: '/components/button' },
@@ -19,4 +19,7 @@ export default defineConfig({
       }
     ],
   },
+  alias: {
+    'demos': '/src/components/demos/index.ts'
+  }
 });

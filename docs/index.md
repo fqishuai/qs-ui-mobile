@@ -3,18 +3,18 @@ hero:
   title: QS UI Mobile
   description: A react UI library for building mobile web apps
   actions:
-    - text: Hello
-      link: /
-    - text: World
-      link: /
+    - text: 开始使用
+      link: /guide/theming
+    - text: GitHub
+      link: https://github.com/fqishuai/qs-ui-mobile
 features:
-  - title: Hello
+  - title: 体验
     emoji: 💎
-    description: Put hello description here
-  - title: World
+    description: 参考ant-design-mobile和uView中组件的外观及交互，助力打造极致体验的产品
+  - title: 外观
     emoji: 🌈
-    description: Put world description here
-  - title: '!'
+    description: 基于 CSS 变量，便于高效地调整组件的外观或创建自己的主题
+  - title: 性能
     emoji: 🚀
-    description: Put ! description here
+    description: 无需配置，即可拥有极致性能
 ---

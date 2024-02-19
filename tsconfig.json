@@ -7,12 +7,14 @@
     "skipLibCheck": true,
     "esModuleInterop": true,
     "jsx": "react",
+    "target": "ES6",
     "lib": ["ES2016", "DOM"],
     "baseUrl": "./",
     "paths": {
       "@@/*": [".dumi/tmp/*"],
       "qs-ui-mobile": ["src"],
-      "qs-ui-mobile/*": ["src/*", "*"]
+      "qs-ui-mobile/*": ["src/*", "*"],
+      "demos": ["src/components/demos/index.ts"]
     }
   },
   "include": [".dumirc.ts", "src/**/*"]
