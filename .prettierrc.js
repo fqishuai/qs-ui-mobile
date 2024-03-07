@@ -1,19 +1,19 @@
 module.exports = {
-  pluginSearchDirs: false,
-  plugins: [
-    require.resolve('prettier-plugin-organize-imports'),
-    require.resolve('prettier-plugin-packagejson'),
-  ],
-  printWidth: 80,
-  proseWrap: 'never',
+  semi: false,
+  trailingComma: 'es5',
+  tabWidth: 2,
   singleQuote: true,
-  trailingComma: 'all',
+  bracketSameLine: false,
+  jsxSingleQuote: true,
+  quoteProps: 'preserve',
+  arrowParens: 'avoid',
+  proseWrap: 'never',
   overrides: [
     {
-      files: '*.md',
-      options: {
-        proseWrap: 'preserve',
+      'files': ['*.md'],
+      'options': {
+        embeddedLanguageFormatting: 'off',
       },
     },
   ],
-};
+}
