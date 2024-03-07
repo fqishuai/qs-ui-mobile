@@ -1,11 +1,13 @@
-# qs-ui-mobile
+<div align="center">
+  <img src="https://qs-ui-mobile.onrender.com/logo.png" alt="logo" />
+  <h1>QS UI Mobile</h1>
 
-A react UI library for building mobile web apps
+  <p>A react UI library for building mobile web apps</p>
 
-[![NPM version](https://img.shields.io/npm/v/qs-ui-mobile.svg?style=flat)](https://npmjs.org/package/qs-ui-mobile)
-[![NPM downloads](http://img.shields.io/npm/dm/qs-ui-mobile.svg?style=flat)](https://npmjs.org/package/qs-ui-mobile)
+[![NPM version](https://img.shields.io/npm/v/qs-ui-mobile.svg?style=flat)](https://npmjs.org/package/qs-ui-mobile) [![NPM downloads](http://img.shields.io/npm/dm/qs-ui-mobile.svg?style=flat)](https://npmjs.org/package/qs-ui-mobile)
 
-[文档](https://qs-ui-mobile.onrender.com/)
+  <h4><a href="https://qs-ui-mobile.onrender.com/">文档</a></h4>
+</div>
 
 ```bash
 $ npm install --save qs-ui-mobile

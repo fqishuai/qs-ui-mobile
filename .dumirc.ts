@@ -1,4 +1,4 @@
-import { defineConfig } from 'dumi';
+import { defineConfig } from 'dumi'
 
 export default defineConfig({
   outputPath: 'dist',
@@ -16,10 +16,11 @@ export default defineConfig({
       {
         type: 'component',
         dir: 'src/components',
-      }
+      },
     ],
   },
   alias: {
-    'demos': '/src/components/demos/index.ts'
-  }
-});
+    'demos': '/src/components/demos/index.ts',
+  },
+  favicons: ['/logo.png'],
+})
