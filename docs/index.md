@@ -4,7 +4,7 @@ hero:
   description: A react UI library for building mobile web apps
   actions:
     - text: 开始使用
-      link: /guide/theming
+      link: /#安装
     - text: GitHub
       link: https://github.com/fqishuai/qs-ui-mobile
 features:
@@ -20,3 +20,23 @@ features:
 ---
 
 # QS UI Mobile
+
+## 安装
+
+```bash
+$ npm install --save qs-ui-mobile
+# or
+$ yarn add qs-ui-mobile
+# or
+$ pnpm add qs-ui-mobile
+# or
+$ bun add qs-ui-mobile
+```
+
+## 引入
+
+直接引入组件即可，qs-ui-mobile 会自动为你加载 css 样式文件：
+
+```js
+import { Button } from 'qs-ui-mobile'
+```
