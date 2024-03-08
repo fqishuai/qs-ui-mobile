@@ -1,0 +1,96 @@
+@class-prefix-button: ~'qsf-button';
+
+.qsf-button {
+  font-size: 14px;
+  color: #303133;
+  background-color: #fff;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #e4e7ed;
+  border-radius: 4px;
+
+  &::before {
+    transform: translate(-1px, -1px);
+    background-color: #000;
+    border: 1px solid #000;
+    border-radius: 4px;
+  }
+
+  &-default {
+    &.@{class-prefix-button}-fill-outline {
+      background-color: transparent;
+      border-color: #303133;
+    }
+    &.@{class-prefix-button}-fill-none {
+      background-color: transparent;
+      border-width: 0;
+    }
+  }
+
+  &:not(&-default) {
+    color: #fff;
+    &.@{class-prefix-button}-fill-outline {
+      background-color: transparent;
+    }
+    &.@{class-prefix-button}-fill-none {
+      background-color: transparent;
+      border-width: 0;
+    }
+  }
+
+  &-primary {
+    background-color: #2979ff;
+    border-color: #2979ff;
+    &.@{class-prefix-button}-fill-outline,
+    &.@{class-prefix-button}-fill-none {
+      color: #2979ff;
+    }
+  }
+
+  &-success {
+    background-color: #19be6b;
+    border-color: #19be6b;
+    &.@{class-prefix-button}-fill-outline,
+    &.@{class-prefix-button}-fill-none {
+      color: #19be6b;
+    }
+  }
+
+  &-warning {
+    background-color: #f90;
+    border-color: #f90;
+    &.@{class-prefix-button}-fill-outline,
+    &.@{class-prefix-button}-fill-none {
+      color: #f90;
+    }
+  }
+
+  &-danger {
+    background-color: #fa3534;
+    border-color: #fa3534;
+    &.@{class-prefix-button}-fill-outline,
+    &.@{class-prefix-button}-fill-none {
+      color: #fa3534;
+    }
+  }
+
+  &&-shape-rounded {
+    border-radius: 1000px;
+  }
+
+  &&-shape-rectangular {
+    border-radius: 0;
+  }
+
+  &&-mini {
+    font-size: 10px;
+  }
+
+  &&-small {
+    font-size: 12px;
+  }
+
+  &&-large {
+    font-size: 15px;
+  }
+}

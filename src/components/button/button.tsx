@@ -1,4 +1,4 @@
-import React, { forwardRef, useRef, useState } from "react";
+import React, { forwardRef, useImperativeHandle, useRef, useState } from 'react'
 import type {
   DetailedHTMLProps,
   ButtonHTMLAttributes,
@@ -6,11 +6,10 @@ import type {
   MouseEventHandler,
 } from 'react'
 import classNames from 'classnames'
-import { mergeProps } from "../../utils/with-default-props";
-import { NativeProps, RenderNativeProps } from "../../utils/render-native-props";
+import { mergeProps } from '../../utils/with-default-props'
+import { NativeProps, RenderNativeProps } from '../../utils/render-native-props'
 import { isPromise } from '../../utils/validate'
-
-const classPrefix = `qsf-button`
+import DotLoading from '../dot-loading'
 
 type NativeButtonProps = DetailedHTMLProps<
   ButtonHTMLAttributes<HTMLButtonElement>,
@@ -49,12 +48,14 @@ export type ButtonRef = {
   nativeElement: HTMLButtonElement | null
 }
 
+const classPrefix = 'qsf-button'
+
 const defaultProps: ButtonProps = {
   color: 'default',
   fill: 'solid',
   block: false,
   loading: false,
-  // loadingIcon: <DotLoading color='currentColor' />,
+  loadingIcon: <DotLoading color='currentColor' />,
   type: 'button',
   shape: 'default',
   size: 'middle',
@@ -63,9 +64,14 @@ const defaultProps: ButtonProps = {
 export const Button = forwardRef<ButtonRef, ButtonProps>((p, ref) => {
   const [innerLoading, setInnerLoading] = useState(false)
   const nativeButtonRef = useRef<HTMLButtonElement>(null)
-  
+
+  useImperativeHandle(ref, () => ({
+    get nativeElement() {
+      return nativeButtonRef.current
+    },
+  }))
+
   const props = mergeProps(defaultProps, p)
-  console.log(123, JSON.stringify(props))
   const loading = props.loading === 'auto' ? innerLoading : props.loading
   const disabled = props.disabled || loading
   const buttonProps: ButtonProps = {
@@ -97,31 +103,36 @@ export const Button = forwardRef<ButtonRef, ButtonProps>((p, ref) => {
 
   buttonProps.onClick = handleClick
 
-  buttonProps.className = classNames(
-    classPrefix,
-    {
-      [`${classPrefix}-${props.color}`]: props.color,
-      [`${classPrefix}-block`]: props.block,
-      [`${classPrefix}-disabled`]: disabled,
-      [`${classPrefix}-fill-outline`]: props.fill === 'outline',
-      [`${classPrefix}-fill-none`]: props.fill === 'none',
-      [`${classPrefix}-mini`]: props.size === 'mini',
-      [`${classPrefix}-small`]: props.size === 'small',
-      [`${classPrefix}-large`]: props.size === 'large',
-      [`${classPrefix}-loading`]: loading,
-    },
-    `${classPrefix}-shape-${props.shape}`
-  )
-  
   return (
     <RenderNativeProps
       mergeDefaultProps={props}
-      elementClassName={buttonProps.className}
-      renderElement={(commonProps) =>
-        <button {...{...buttonProps, ...commonProps}}>
-          <span>{props.children}</span>
+      elementClassName={classNames(
+        classPrefix,
+        {
+          [`${classPrefix}-${props.color}`]: props.color,
+          [`${classPrefix}-block`]: props.block,
+          [`${classPrefix}-disabled`]: disabled,
+          [`${classPrefix}-fill-outline`]: props.fill === 'outline',
+          [`${classPrefix}-fill-none`]: props.fill === 'none',
+          [`${classPrefix}-mini`]: props.size === 'mini',
+          [`${classPrefix}-small`]: props.size === 'small',
+          [`${classPrefix}-large`]: props.size === 'large',
+          [`${classPrefix}-loading`]: loading,
+        },
+        `${classPrefix}-shape-${props.shape}`
+      )}
+      renderElement={commonProps => (
+        <button {...{ ...buttonProps, ...commonProps }}>
+          {loading ? (
+            <div className={`${classPrefix}-loading-wrapper`}>
+              {props.loadingIcon}
+              {props.loadingText || props.children}
+            </div>
+          ) : (
+            <span>{props.children}</span>
+          )}
         </button>
-      }
+      )}
     ></RenderNativeProps>
   )
 })

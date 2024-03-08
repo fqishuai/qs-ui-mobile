@@ -2,7 +2,10 @@
 
 .@{class-prefix-button} {
   --text-color: var(--qsf-button-text-color, var(--qsf-color-text));
-  --background-color: var(--qsf-button-background-color, var(--qsf-color-white));
+  --background-color: var(
+    --qsf-button-background-color,
+    var(--qsf-color-background-light)
+  );
   --border-radius: var(--qsf-button-border-radius, 4px);
   --border-width: var(--qsf-button-border-width, 1px);
   --border-style: var(--qsf-button-border-style, solid);
@@ -19,18 +22,62 @@
   cursor: pointer;
   transition: opacity ease 0.15s;
   user-select: none;
+  font-size: var(--qsf-font-size-14);
   color: var(--text-color);
   background-color: var(--background-color);
   border: var(--border-width) var(--border-style) var(--border-color);
   border-radius: var(--border-radius);
+
   &:focus {
     outline: none;
+  }
+
+  &::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(
+      calc(var(--border-width) * -1),
+      calc(var(--border-width) * -1)
+    );
+    width: 100%;
+    height: 100%;
+    background-color: var(--qsf-color-black);
+    border: var(--border-width) var(--border-style) var(--qsf-color-black);
+    border-radius: var(--border-radius);
+    opacity: 0;
+    content: ' ';
+    box-sizing: content-box;
+  }
+
+  &:active::before {
+    opacity: 0.08;
+  }
+
+  &-default {
+    &.@{class-prefix-button}-fill-outline {
+      --background-color: transparent;
+      --border-color: var(--qsf-color-text);
+    }
+    &.@{class-prefix-button}-fill-none {
+      --background-color: transparent;
+      --border-width: 0;
+    }
   }
 
   &:not(&-default) {
     --text-color: var(--qsf-color-white);
     --background-color: var(--color);
     --border-color: var(--color);
+    &.@{class-prefix-button}-fill-outline {
+      --text-color: var(--color);
+      --background-color: transparent;
+    }
+    &.@{class-prefix-button}-fill-none {
+      --text-color: var(--color);
+      --background-color: transparent;
+      --border-width: 0;
+    }
   }
 
   &-primary {
@@ -47,5 +94,68 @@
 
   &-danger {
     --color: var(--qsf-color-danger);
+  }
+
+  &-disabled {
+    cursor: not-allowed;
+    opacity: 0.4;
+
+    &:active::before {
+      display: none;
+    }
+  }
+
+  &-block {
+    display: block;
+    width: 100%;
+  }
+
+  &&-shape-rounded {
+    --border-radius: 1000px;
+  }
+
+  &&-shape-rectangular {
+    --border-radius: 0;
+  }
+
+  &&-mini {
+    padding-top: 3px;
+    padding-bottom: 3px;
+    font-size: var(--qsf-font-size-10);
+    &.@{class-prefix-button}-shape-rounded {
+      padding-left: 9px;
+      padding-right: 9px;
+    }
+  }
+
+  &&-small {
+    padding-top: 3px;
+    padding-bottom: 3px;
+    font-size: var(--qsf-font-size-12);
+  }
+
+  &&-large {
+    padding-top: 11px;
+    padding-bottom: 11px;
+    font-size: var(--qsf-font-size-15);
+  }
+
+  &-loading {
+    vertical-align: bottom;
+  }
+
+  &-loading-wrapper {
+    display: flex;
+    height: 1.4em;
+    align-items: center;
+    justify-content: center;
+
+    > .qsf-loading {
+      opacity: 0.6;
+
+      &.qsf-spin-loading {
+        margin-right: 0.4em;
+      }
+    }
   }
 }
